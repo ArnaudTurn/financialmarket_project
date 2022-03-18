@@ -1,0 +1,28 @@
+## Global configuration dictionnary
+configlobal:
+  buildpreprocess: null                                                                 # yes to rebuild the preprocess /  null to not build the preprocess
+  buildeval: yes                                                                        # yes to rebuild the preprocess /  null to not build the preprocess
+  datetrain: ['2010','2011','2012','2013']                                              # dates to keep for the training
+  datetest: ['2014']                                                                    # date to use for the testing
+  list_of_var_to_save: ['DATE', 'RP_ENTITY_ID','GROUP_E_ALL_SG90','T1_RETURN']          # variables to be kept over the process
+  var_date: DATE                                                                        # date variable
+  var_id: RP_ENTITY_ID                                                                  # id variable
+  var_target: T1_RETURN                                                                 # target variable
+  ntry:                                                                                 # scenario of variables to use for the learning
+    features_try1: ['GLOBAL_ALL','GLOBAL_HEAD','GLOBAL_BODY','GLOBAL_ALL_SG90','GLOBAL_HEAD_SG90','GLOBAL_BODY_SG90','GLOBAL_ALL_SG365','GLOBAL_HEAD_SG365','GLOBAL_BODY_SG365']
+    features_try2: ['GROUP_A_ALL','GROUP_A_HEAD','GROUP_A_BODY','GROUP_A_ALL_SG90','GROUP_A_HEAD_SG90','GROUP_A_BODY_SG90','GROUP_A_ALL_SG365','GROUP_A_HEAD_SG365','GROUP_A_BODY_SG365','GROUP_E_ALL','GROUP_E_HEAD','GROUP_E_BODY','GROUP_E_ALL_SG90','GROUP_E_HEAD_SG90','GROUP_E_BODY_SG90','GROUP_E_ALL_SG365','GROUP_E_HEAD_SG365','GROUP_E_BODY_SG365','GROUP_AM_ALL','GROUP_AM_HEAD','GROUP_AM_BODY','GROUP_AM_ALL_SG90','GROUP_AM_HEAD_SG90','GROUP_AM_BODY_SG90','GROUP_AM_ALL_SG365','GROUP_AM_HEAD_SG365','GROUP_AM_BODY_SG365']
+    features_try3: ['GLOBAL_ALL', 'GLOBAL_HEAD', 'GLOBAL_BODY', 'GLOBAL_ALL_SG90', 'GLOBAL_HEAD_SG90', 'GLOBAL_BODY_SG90', 'GLOBAL_ALL_SG365', 'GLOBAL_HEAD_SG365', 'GLOBAL_BODY_SG365', 'T0_RETURN', 'GROUP_A_ALL', 'GROUP_A_HEAD', 'GROUP_A_BODY', 'GROUP_A_ALL_SG90', 'GROUP_A_HEAD_SG90', 'GROUP_A_BODY_SG90', 'GROUP_A_ALL_SG365', 'GROUP_A_HEAD_SG365', 'GROUP_A_BODY_SG365', 'GROUP_E_ALL', 'GROUP_E_HEAD', 'GROUP_E_BODY', 'GROUP_E_ALL_SG90', 'GROUP_E_HEAD_SG90', 'GROUP_E_BODY_SG90', 'GROUP_E_ALL_SG365', 'GROUP_E_HEAD_SG365', 'GROUP_E_BODY_SG365', 'GROUP_AM_ALL', 'GROUP_AM_HEAD', 'GROUP_AM_BODY', 'GROUP_AM_ALL_SG90', 'GROUP_AM_HEAD_SG90', 'GROUP_AM_BODY_SG90', 'GROUP_AM_ALL_SG365', 'GROUP_AM_HEAD_SG365', 'GROUP_AM_BODY_SG365', 'day', 'month', 'delta_date', 'RATIO_0_1', 'RATIO_0_2', 'RATIO_0_3', 'RATIO_0_4', 'RATIO_0_5', 'LOG_T0_RETURN', 'min_T0_RETURN_5d', 'max_T0_RETURN_5d', 'mean_T0_RETURN_5d', 'var_T0_RETURN_5d', 'slow_invest_pace', 'downtrend_3d', 'uptrend_3d', 'T0_RETURN_1', 'T0_RETURN_2', 'T0_RETURN_3', 'T0_RETURN_4', 'T0_RETURN_5', 'T0_RETURN_6', 'T0_RETURN_7', 'T0_RETURN_8', 'T0_RETURN_9', 'T0_RETURN_10', 'T0_RETURN_11', 'T0_RETURN_12', 'T0_RETURN_13', 'T0_RETURN_14', 'T0_RETURN_15', 'RSI_PRICE_EST_14', 'RSI_PRICE_EST_28', 'mean_PRICE_EST_14', 'std_PRICE_EST_14', 'UPPER_BB_PRICE_EST_14', 'LOWER_BB_PRICE_EST_14', 'Drawdown_min_PRICE_EST_14', 'Drawdown_max_PRICE_EST_14', 'Max_decreasePRICE_EST_14', 'Min_decreasePRICE_EST_14']
+
+#1- Dictionnary to build the preprocessed data
+configpreprocess:
+  input_df_path: data\SampleDataSet.csv
+  output_df_path: data\FinalDataSet.csv
+
+#2 - Dictionnary to build the eval and test
+configeval:
+  input_df_path: data\FinalDataSet.csv
+  var_in_train: null
+  rule_for_train: null
+  rule_for_test: null
+  output_directory: output
+  eval_or_test: test
