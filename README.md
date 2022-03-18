@@ -1,4 +1,4 @@
-# Return predictions
+# Log-return prediction : Automation
 
 Candidate : Arnaud Tauveron
 
